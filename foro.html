@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="style.css">
+    <title>Equilibrio Forzado</title>
 </head>
 <body>
-
+   
     <header>
         <!-- Esto es IGUAL al index.html -->
         <div class="logo">
@@ -14,32 +14,30 @@
         <nav class="menu">
             <ul>
                 <li><a href="index.html">INICIO</a></li>
-                <li><a href="serie.html" >SERIE</a></li>
-                <li><a href="foro.html"class="active">FORO</a></li>
+                <li><a href="serie.html">SERIE</a></li>
+                <li><a href="foro.html"  class="active" >FORO</a></li>
                 <li><a href="personajes.html">PERSONAJES</a></li>
                 <li><a href="sobre-nos.html">SOBRE NOS</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- AQUÍ ESTÁ EL CONTENIDO NUEVO (image_68989c.png) -->
-      <main class="foro-content">
-    <h2>¿TE ANIMÁS A SUMAR TU IDEA?</h2>
-    <p>Completá el formulario abajo con ideas de qué podría pasar en los siguientes episodios. O si querés también podés modificar el ya existente como un episodio alternativo.</p>
-
-    <form class="formulario-foro">
-        <div class="fila">
-            <input type="text" placeholder="Nombre..." required>
-            <input type="email" placeholder="Correo..." required>
-        </div>
-        
-        <textarea placeholder="Idea de episodio o guión modificado..." rows="10" required></textarea>
-        
-        <button type="submit">Enviar</button>
-    </form>
-
-    <p class="footer-nota">El Nombre y correo solicitados son con fines de poder comunicarnos con el usuario para avisarle sobre cuando saldrá su contribución en Equilibrio Forzado. Jamás pediremos cuenta bancaria ni transferencias. Esto es con fines de entretenimiento.</p>
+    <main class="foro-content">
+        <h2>¿TE ANIMÁS A SUMAR TU IDEA?</h2>
+        <form class="formulario-foro" id="form-propuesta">
+            <input type="text" id="nombre" placeholder="Nombre..." required>
+            <input type="email" id="correo" placeholder="Correo..." required>
+            <textarea id="idea" placeholder="Idea..." required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
     </main>
 
+    <main class="foro-content">
+        <h2>FORO DE DISCUSIÓN</h2>
+        <section class="mensajes-feed" id="contenedor-mensajes">
+            </section>
+    </main>
+
+    <script type="module" src="foro.js"></script>
 </body>
 </html>

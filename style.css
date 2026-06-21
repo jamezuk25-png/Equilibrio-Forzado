@@ -47,6 +47,12 @@ body {
     pointer-events: none; /* Esto hace que la imagen no interfiera con los clics en el menú */
 }
 
+.sobre-nosotros-content {
+    padding: 40px 20px;
+    color: #ff00ff;
+    text-align: center;
+}
+
 /* --- ESTILOS ESPECÍFICOS DE "SERIE" --- */
 .serie-content {
     padding: 40px 20px;
@@ -128,3 +134,156 @@ body {
     margin-top: 40px;
     opacity: 0.7;
 }
+
+.mensajes-feed {
+    border-top: 2px solid #ff00ff;
+    padding-top: 30px;
+}
+
+/* Las tarjetas de propuestas */
+.mensaje {
+    border: 1px solid #555;
+    padding: 20px;
+    margin-bottom: 20px;
+    background: #000;
+}
+
+/* Botón de Comentar */
+.btn-comentar {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-comentar:hover {
+    background: #ff00ff;
+    color: #000;
+}
+
+/* Espacio donde irán los comentarios hijos */
+.area-comentarios {
+    margin-top: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #ff00ff;
+}
+
+.btn-comentar {
+    background: transparent;
+    border: 1px solid #ff00ff;
+    color: #ff00ff;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.area-comentarios input {
+    background: #222;
+    border: 1px solid #444;
+    color: white;
+    padding: 5px;
+    width: 70%;
+}
+
+.respuesta-box {
+    margin-top: 10px;
+    display: flex;
+    gap: 5px;
+}
+
+.respuesta-box input {
+    flex-grow: 1;
+    background: #333;
+    border: none;
+    padding: 5px;
+    color: white;
+}
+
+.btn-enviar-res {
+    background: #ff00ff; /* O el color de tu marca */
+    border: none;
+    cursor: pointer;
+}
+
+.seccion-personajes {
+    display: flex;
+    flex-direction: column; /* Apila las tarjetas */
+    align-items: center;    /* Las centra horizontalmente */
+    gap: 100px;              /* Espacio entre personajes */
+    padding: 80px;
+}
+
+.personaje-contenedor {
+    position: absolute; 
+    width: 600px;        /* Ancho de la tarjeta */
+    height: 400px;       /* Alto de la tarjeta */
+    border-radius: 15px;
+    overflow: hidden;    /* Corta cualquier cosa que se salga del borde */
+    border: 2px solid #333; /* Borde oscuro por defecto */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover general en la tarjeta */
+.personaje-contenedor:hover {
+    transform: scale(1.02); /* Se agranda un poquito */
+    border-color: #ff00ff; /* El borde se vuelve rosa neón */
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5); /* Brillo neón */
+}
+
+.img-personaje {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    transition: filter 0.3s ease; /* Para oscurecer la foto */
+}
+
+.texto-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* ESTA LÍNEA ES LA QUE TE FALTA */
+    box-sizing: border-box; 
+    
+    background: rgba(0, 0, 0, 0.85);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px; /* Ahora el padding se suma hacia ADENTRO */
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    text-align: left;
+}
+
+/* Y asegurate de que el contenedor tenga esto */
+.personaje-contenedor {
+    position: relative;
+    width: 1000px;
+    height: 800px;
+    box-sizing: border-box; /* Fundamental para que el borde no rompa el tamaño */
+    overflow: hidden;
+    gap: 100px;
+}
+
+/* LA MAGIA: Cuando hacés hover en el contenedor, mostrás el overlay */
+.personaje-contenedor:hover .texto-overlay {
+    opacity: 1;
+}
+
+/* Opcional: Oscurecer un poco la foto de fondo al hacer hover */
+.personaje-contenedor:hover .img-personaje {
+    filter: brightness(50%);
+}
+
+/* Un efecto lindo cuando pasas el mouse por encima */
+.img-personaje:hover {
+    transform: scale(1.05);
+}
+
